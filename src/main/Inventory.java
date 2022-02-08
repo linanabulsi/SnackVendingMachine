@@ -19,8 +19,10 @@ public class Inventory<T> {
 	}
 
 	public void decreaseQuantity(T obj) {
+		if(getQuantity(obj) > 0) {
 		int oldQuantity = inventory.get(obj);
 		inventory.put(obj, oldQuantity - 1);
+		}
 	}
 
 	public void increaseQuantity(T obj) {
